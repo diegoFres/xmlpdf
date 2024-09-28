@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="MenuCDsOferta" type="MenuCDsOfertaType"/>
+
+  <xs:complexType name="CDsType">
+    <xs:sequence>
+      <xs:element name="titulo">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="still got the blues"/>
+            <xs:enumeration value="One night only"/>
+            <xs:enumeration value="When a man loves a woman"/>
+            <xs:enumeration value="Big Willie Style"/>
+            <xs:enumeration value="La cancion de Juan Pedro"/>
+            <xs:enumeration value="The dock of the bay"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="artista">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Gary Moore"/>
+            <xs:enumeration value="Bee Gees"/>
+            <xs:enumeration value="Percy Sledge"/>
+            <xs:enumeration value="Will Smith"/>
+            <xs:enumeration value="Radio Futura"/>
+            <xs:enumeration value="Otis Redding"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="pais">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="UK"/>
+            <xs:enumeration value="USA"/>
+            <xs:enumeration value="Espana"/>
+            <xs:enumeration value="Francia"/>
+            <xs:enumeration value="Alemania"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="companiaDiscografica">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Virgin records"/>
+            <xs:enumeration value="Polydor"/>
+            <xs:enumeration value="Atlantic"/>
+            <xs:enumeration value="Columbia"/>
+            <xs:enumeration value="Sony Music-Ariola"/>
+            <xs:enumeration value="Universal Music"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="precio">
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:minExclusive value="0"/>
+            <xs:maxExclusive value="20"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="anoPublicacion">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1980"/>
+            <xs:maxInclusive value="2024"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="genero" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Rock"/>
+            <xs:enumeration value="Pop"/>
+            <xs:enumeration value="Jazz"/>
+            <xs:enumeration value="Blues"/>
+            <xs:enumeration value="Hip-Hop"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="duracion" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\d{1,2}:\d{2}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="MenuCDsOfertaType">
+    <xs:sequence>
+      <xs:element type="CDsType" name="CDs" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

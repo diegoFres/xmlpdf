@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="menuDesayunos" type="menuDesayunosType"/>
+  <xs:complexType name="comidaType">
+    <xs:sequence>
+      <xs:element name="nombre" type="nombreType"/>
+      <xs:element name="precio" type="precioType"/>
+      <xs:element name="descripcion" type="descripcionType"/>
+      <xs:element name="calorias" type="caloriasType"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id" use="optional"/>
+  </xs:complexType>
+  <xs:simpleType name="nombreType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Gofres Belgas"/>
+      <xs:enumeration value="Gofres belgas con fresas"/>
+      <xs:enumeration value="Gofres Belgas con frutas del bosque"/>
+      <xs:enumeration value="Tostada francesa"/>
+      <xs:enumeration value="Desayuno de la casa"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="precioType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="5.95"/>
+      <xs:enumeration value="7.95"/>
+      <xs:enumeration value="8.95"/>
+      <xs:enumeration value="4.50"/>
+      <xs:enumeration value="6.95"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="descripcionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Dos de nuestros famosos gofres belgas con abundante sirope"/>
+      <xs:enumeration value="Ligeros gofres belgas cubiertos de fresas y nata montada"/>
+      <xs:enumeration value="Ligeros gofres belgas cubiertos con frutas del bosque y nata montada"/>
+      <xs:enumeration value="Dos gruesas rebanadas de nuestro pan frances casero"/>
+      <xs:enumeration value="Dos huevos, blancos o salchicha, tostada y patatas fritas"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="caloriasType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="650"/>
+      <xs:enumeration value="900"/>
+      <xs:enumeration value="600"/>
+      <xs:enumeration value="950"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="menuDesayunosType">
+    <xs:sequence>
+      <xs:element type="comidaType" name="comida" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

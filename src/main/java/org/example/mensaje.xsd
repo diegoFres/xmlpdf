@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="mensaje" type="mensajeType"/>
+  <xs:complexType name="remiteType">
+    <xs:sequence>
+      <xs:element name="nombre" type="nombreType"/>
+      <xs:element name="email" type="emailType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="destinatarioType">
+    <xs:sequence>
+      <xs:element name="nombre" type="nombreType"/>
+      <xs:element name="email" type="emailType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="textoType">
+    <xs:sequence>
+      <xs:element name="parrafo1" type="xs:string"/>
+      <xs:element name="parrafo2" type="xs:string" minOccurs="0"/>
+      <xs:element name="parrafo3" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mensajeType">
+    <xs:sequence>
+      <xs:element name="remite" type="remiteType"/>
+      <xs:element name="destinatario" type="destinatarioType"/>
+      <xs:element name="asunto" type="asuntoType"/>
+      <xs:element name="texto" type="textoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="nombreType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="asuntoType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="emailType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

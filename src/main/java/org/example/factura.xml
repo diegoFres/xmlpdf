@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE facturaciones [
+        <!ELEMENT facturaciones (bussinesContact, billTo, shipTo, invoiceDetails, DescriptionOfGoodsOrServices, customerMessage, costoTotal)>
+        <!ATTLIST facturaciones name CDATA #REQUIRED>
+        <!ELEMENT bussinesContact (name, phone, email, streetAddress)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT phone (#PCDATA)>
+        <!ELEMENT email (#PCDATA)>
+        <!ELEMENT streetAddress (city, state, zipCode)>
+        <!ELEMENT city (#PCDATA)>
+        <!ELEMENT state (#PCDATA)>
+        <!ELEMENT zipCode (#PCDATA)>
+        <!ELEMENT billTo (clientName, streetAddress)>
+        <!ELEMENT clientName (#PCDATA)>
+        <!ELEMENT shipTo (clientName, streetaddress)>
+        <!ELEMENT streetaddress (city, state, zipCode)>
+        <!ELEMENT invoiceDetails (Number, date, termsOfPayment, dueDate)>
+        <!ELEMENT Number (#PCDATA)>
+        <!ELEMENT date (#PCDATA)>
+        <!ELEMENT termsOfPayment (#PCDATA)>
+        <!ELEMENT dueDate (#PCDATA)>
+        <!ELEMENT DescriptionOfGoodsOrServices (productOrService, description, qty-hrs, rate, amount)>
+        <!ELEMENT productOrService (#PCDATA)>
+        <!ELEMENT description (#PCDATA)>
+        <!ELEMENT qty-hrs (#PCDATA)>
+        <!ELEMENT rate (#PCDATA)>
+        <!ATTLIST rate currency CDATA #IMPLIED>
+        <!ELEMENT amount (#PCDATA)>
+        <!ELEMENT customerMessage (#PCDATA)>
+        <!ELEMENT costoTotal (subtotal, salesTax, shipping, total)>
+        <!ELEMENT subtotal (#PCDATA)>
+        <!ELEMENT salesTax (#PCDATA)>
+        <!ELEMENT shipping (#PCDATA)>
+        <!ELEMENT total (#PCDATA)>
+        <!ATTLIST costoTotal currency CDATA #IMPLIED>
+        ]>
+<facturaciones name = "INVOICE">
+    <bussinesContact>
+        <name>nombre</name>
+        <phone>(000)000-0000</phone>
+        <email>correo electronico</email>
+        <streetAddress>
+            <city>ciudad</city>
+            <state>estado</state>
+            <zipCode>codigo postal</zipCode>
+        </streetAddress>
+    </bussinesContact>
+    <billTo>
+        <clientName>nombre del cliente</clientName>
+        <streetAddress>
+            <city>ciudad</city>
+            <state>estado</state>
+            <zipCode>codigo postal</zipCode>
+        </streetAddress>
+    </billTo>
+    <shipTo>
+        <clientName>nombre del cliente</clientName>
+        <streetaddress>
+            <city>ciudad</city>
+            <state>estado</state>
+            <zipCode>codigo postal</zipCode>
+        </streetaddress>
+    </shipTo>
+    <invoiceDetails>
+        <Number>numero de factura</Number>
+        <date>fecha de factura</date>
+        <termsOfPayment>condiciones de pago</termsOfPayment>
+        <dueDate>fecha de vencimiento</dueDate>
+    </invoiceDetails>
+    <DescriptionOfGoodsOrServices>
+        <productOrService>producto o servicio</productOrService>
+        <description> descripcion del producto</description>
+        <qty-hrs>cantidad/horas</qty-hrs>
+        <rate>tasa</rate>
+        <amount>importe</amount>
+    </DescriptionOfGoodsOrServices>
+    <customerMessage>
+        Hello!
+        Thank you for you purchase.
+        Please return this invoice
+        with payment.
+        Thanks!
+    </customerMessage>
+    <costoTotal>
+        <subtotal>cantidad</subtotal>
+        <salesTax>cantidad impuestos</salesTax>
+        <shipping>cantidad de envio</shipping>
+        <total>cantidad total de la factura</total>
+    </costoTotal>
+</facturaciones>

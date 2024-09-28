@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE mensaje [
+        <!ELEMENT mensaje (remite, destinatario, asunto, texto)>
+        <!ATTLIST mensaje
+                id ID #REQUIRED
+                lang CDATA #IMPLIED
+                prioridad (baja | media | alta) "media">
+
+        <!ELEMENT remite (nombre, email)>
+        <!ELEMENT nombre (#PCDATA)>
+        <!ELEMENT email (#PCDATA)>
+
+        <!ELEMENT destinatario (nombre, email)>
+
+        <!ELEMENT asunto (#PCDATA)>
+
+        <!ELEMENT texto (parrafo1, parrafo2, parrafo3)>
+        <!ELEMENT parrafo1 (#PCDATA)>
+        <!ELEMENT parrafo2 (#PCDATA)>
+        <!ELEMENT parrafo3 (#PCDATA)>
+        ]>
+<mensaje id="mensaje">
+    <remite>
+        <nombre>Alfredo Reino</nombre>
+        <email>alf@ibium.com</email>
+    </remite>
+    <destinatario>
+        <nombre>Bill Clinton</nombre>
+        <email>president@whitehouse.gov</email>
+    </destinatario>
+    <asunto>Hola Bill</asunto>
+    <texto>
+        <parrafo1>Hola que tal?</parrafo1>
+        <parrafo2>
+            Hace mucho tiempo que no escribes. A ver si llamas
+            y quedamos pronto
+        </parrafo2>
+        <parrafo3>Un saludo</parrafo3>
+    </texto>
+
+</mensaje>

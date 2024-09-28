@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE MenuCDsOferta [
+        <!ELEMENT MenuCDsOferta (CDs)*>
+        <!ELEMENT CDs (titulo, artista, pais, companiaDiscografica, precio, anoPublicacion)>
+        <!ATTLIST CDs id ID #REQUIRED>
+        <!ELEMENT titulo (#PCDATA)>
+        <!ELEMENT artista (#PCDATA)>
+        <!ELEMENT pais (#PCDATA)>
+        <!ELEMENT companiaDiscografica (#PCDATA)>
+        <!ELEMENT precio (#PCDATA)>
+        <!ATTLIST precio moneda CDATA #IMPLIED>
+        <!ELEMENT anoPublicacion (#PCDATA)>
+        ]>
+<MenuCDsOferta>
+    <CDs id="SGTB">
+        <titulo>still got the blues</titulo>
+        <artista>Gary Moore</artista>
+        <pais>UK</pais>
+        <companiaDiscografica>Virgin records</companiaDiscografica>
+        <precio>10.20</precio>
+        <anoPublicacion>1990</anoPublicacion>
+    </CDs>
+    <CDs id="ONO">
+        <titulo>One night only</titulo>
+        <artista>Bee Gees</artista>
+        <pais>UK</pais>
+        <companiaDiscografica>Polydor</companiaDiscografica>
+        <precio>10.90</precio>
+        <anoPublicacion>1998</anoPublicacion>
+    </CDs>
+    <CDs id="WMLW">
+        <titulo>When a man loves a woman</titulo>
+        <artista>Percy Sledge</artista>
+        <pais>USA</pais>
+        <companiaDiscografica>Atlantic</companiaDiscografica>
+        <precio>8.70</precio>
+        <anoPublicacion>1987</anoPublicacion>
+    </CDs>
+    <CDs id="BWS">
+        <titulo>Big Willie Style</titulo>
+        <artista>Will Smith</artista>
+        <pais>USA</pais>
+        <companiaDiscografica>Columbia</companiaDiscografica>
+        <precio>9.90</precio>
+        <anoPublicacion>1997</anoPublicacion>
+    </CDs>
+    <CDs id="LCJP">
+        <titulo>La cancion de Juan Perdro</titulo>
+        <artista>Radio Futura</artista>
+        <pais>Espana</pais>
+        <companiaDiscografica>Sony Music-Ariola</companiaDiscografica>
+        <precio>9.90</precio>
+        <anoPublicacion>1987</anoPublicacion>
+    </CDs>
+    <CDs id="TDOTB">
+        <titulo>The dock of the bay</titulo>
+        <artista>Otis Redding</artista>
+        <pais>USA</pais>
+        <companiaDiscografica>Atlantic</companiaDiscografica>
+        <precio>7.90</precio>
+        <anoPublicacion>1987</anoPublicacion>
+    </CDs>
+</MenuCDsOferta>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="facturaciones" type="facturacionesType"/>
+  <xs:complexType name="streetAddressType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="city"/>
+      <xs:element type="xs:string" name="state"/>
+      <xs:element type="xs:string" name="zipCode"/>
+      <xs:element type="xs:string" name="country" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="bussinesContactType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="phone"/>
+      <xs:element type="xs:string" name="email"/>
+      <xs:element type="streetAddressType" name="streetAddress"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="billToType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="clientName"/>
+      <xs:element type="streetAddressType" name="streetAddress"/>
+      <xs:element type="xs:string" name="clientId" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="shipToType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="clientName"/>
+      <xs:element type="streetAddressType" name="streetAddress"/>
+      <xs:element type="xs:string" name="deliveryInstructions" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="invoiceDetailsType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Number"/>
+      <xs:element type="xs:string" name="date"/>
+      <xs:element type="xs:string" name="termsOfPayment"/>
+      <xs:element type="xs:string" name="dueDate"/>
+      <xs:element type="xs:string" name="invoiceStatus" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DescriptionOfGoodsOrServicesType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="productOrService"/>
+      <xs:element type="xs:string" name="description"/>
+      <xs:element type="xs:string" name="qty-hrs"/>
+      <xs:element type="xs:string" name="rate"/>
+      <xs:element type="xs:string" name="amount"/>
+      <xs:element type="xs:string" name="sku" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="costoTotalType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="subtotal"/>
+      <xs:element type="xs:string" name="salesTax"/>
+      <xs:element type="xs:string" name="shipping"/>
+      <xs:element type="xs:string" name="total"/>
+      <xs:element type="xs:string" name="discount" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="facturacionesType">
+    <xs:sequence>
+      <xs:element type="bussinesContactType" name="bussinesContact"/>
+      <xs:element type="billToType" name="billTo"/>
+      <xs:element type="shipToType" name="shipTo"/>
+      <xs:element type="invoiceDetailsType" name="invoiceDetails"/>
+      <xs:element type="DescriptionOfGoodsOrServicesType" name="DescriptionOfGoodsOrServices" maxOccurs="unbounded"/>
+      <xs:element type="xs:string" name="customerMessage" minOccurs="0"/>
+      <xs:element type="costoTotalType" name="costoTotal"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="name" use="required"/>
+    <xs:attribute type="xs:string" name="invoiceId" use="optional"/>
+  </xs:complexType>
+</xs:schema>

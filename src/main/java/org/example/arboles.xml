@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE tipoArbol [
+        <!ELEMENT tipoArbol (acerMonspessulanum|OleaEuropea|RamajeTortuoso|platanusOrientalis|quercusIlex)*>
+        <!ELEMENT acerMonspessulanum (nombreComun, vegetacion, altura, FormaEstructura, colorEnPrimavera, resistenciaHeladas)>
+        <!ELEMENT OleaEuropea (nombreComun, vegetacion, altura, FormaEstructura)>
+        <!ELEMENT RamajeTortuoso (colorPrimavera, resistenciaHeladas)>
+        <!ELEMENT platanusOrientalis (nombreComun, vegetacion, altura, FormaEstructura, colorEnPrimavera, colorEnOtono, resistenciaHeladas)>
+        <!ELEMENT quercusIlex (nombreComun, vegetacion, altura, FormaEstructura, colorEnPrimavera, resistenciaHeladas)>
+
+        <!ELEMENT nombreComun (#PCDATA)>
+        <!ELEMENT vegetacion (#PCDATA)>
+        <!ELEMENT altura (#PCDATA)>
+        <!ELEMENT FormaEstructura (#PCDATA)>
+        <!ELEMENT colorEnPrimavera (#PCDATA)>
+        <!ELEMENT resistenciaHeladas (#PCDATA)>
+        <!ELEMENT colorPrimavera (#PCDATA)>
+        <!ELEMENT colorEnOtono (#PCDATA)>
+        ]>
+<tipoArbol>
+    <acerMonspessulanum>
+        <nombreComun>Arce de Montpellier, Arce menor</nombreComun>
+        <vegetacion>Caducifolio</vegetacion>
+        <altura>de 6 a 10 metros</altura>
+        <FormaEstructura>Copa esférica. Tronco principal recto con bifurcaciones. Ramaje colgante</FormaEstructura>
+        <colorEnPrimavera>Haz verde brillante, envés verde blanquecino</colorEnPrimavera>
+        <resistenciaHeladas>Heladas fuertes (hasta -15ºC)</resistenciaHeladas>
+    </acerMonspessulanum>
+    <OleaEuropea>
+        <nombreComun>Olivo</nombreComun>
+        <vegetacion>Perenne</vegetacion>
+        <altura>De 8 a 15 metros</altura>
+        <FormaEstructura>C: Copa irregular. Tronco principal irregular con bifurcaciones.</FormaEstructura>
+    </OleaEuropea>
+    <RamajeTortuoso>
+        <colorPrimavera>Haz verde oscuro, envés verde plateado</colorPrimavera>
+        <resistenciaHeladas>Heladas medias (hasta -10ºC)</resistenciaHeladas>
+    </RamajeTortuoso>
+    <platanusOrientalis>
+        <nombreComun>Platano</nombreComun>
+        <vegetacion>Caducifolio</vegetacion>
+        <altura>de 20 a 25 metros</altura>
+        <FormaEstructura> Copa ovoidal. Tronco principal recto. Ramaje expandido</FormaEstructura>
+        <colorEnPrimavera>Haz verde medio, enves verde claro</colorEnPrimavera>
+        <colorEnOtono>Ocre</colorEnOtono>
+        <resistenciaHeladas>Heladas fuertes (hasta -20ºC)</resistenciaHeladas>
+    </platanusOrientalis>
+    <quercusIlex>
+        <nombreComun>Encina</nombreComun>
+        <vegetacion>Perenne</vegetacion>
+        <altura>en torno a 25 metros</altura>
+        <FormaEstructura>Copa esférica o elíptica irregular. Tronco principal recto. Ramaje tortuoso</FormaEstructura>
+        <colorEnPrimavera> Plateado en hojas jóvenes. En hojas antiguas, haz verde oscuro, envés
+            plateado
+        </colorEnPrimavera>
+        <resistenciaHeladas>Heladas fuertes (hasta -15ºC)</resistenciaHeladas>
+    </quercusIlex>
+
+</tipoArbol>
